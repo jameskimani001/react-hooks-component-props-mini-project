@@ -1,13 +1,20 @@
 import React from "react";
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 import blogData from "../data/blog";
 
-console.log(blogData);
-
 function App() {
+  const blogName = "My Personal Blog"; // Replace with blogData.name if available
+  const blogImage = "https://via.placeholder.com/215"; // You can also use a specific image from blogData
+  const aboutText = "This is a blog about my experiences."; // Replace with blogData.about if available
+  const blogPosts = blogData.posts; // Assuming blogData has a posts array
+
   return (
     <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+      <Header name={blogName} />
+      <About image={blogImage} about={aboutText} />
+      <ArticleList articles={blogPosts} />
     </div>
   );
 }
